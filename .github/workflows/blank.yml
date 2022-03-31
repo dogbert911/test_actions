@@ -24,8 +24,4 @@ jobs:
         uses: nanoufo/action-upload-artifacts-and-release-assets@v1.4
         with:
           path: |
-            one
-            two
-            zero*
-      
-
+            *
