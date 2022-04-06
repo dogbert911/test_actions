@@ -24,7 +24,7 @@ def main():
 
     r = make_request(url=url, request_method="GET", headers=headers)
 
-    jobs = r.json['jobs']
+    jobs = r.json()['jobs']
     for job in jobs:
         if job['name'] == os.getenv('GITHUB_JOB'):
             check_run_url = job['check_run_url']
