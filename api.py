@@ -39,8 +39,7 @@ def main():
         }
     }
 
-    make_request(url=check_run_url, request_method="PATCH", headers=headers, json=data)
-
+    r = make_request(url=check_run_url, request_method="PATCH", headers=headers, json=data)
 
     print(check_run_url)
     print('==============================')
