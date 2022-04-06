@@ -17,15 +17,14 @@ def make_request(url: str, request_method: str = "GET", critical: bool = True, *
 
 
 def main():
-    print(os.getenv('_TOKEN'))
-
     headers = {'authorization': f'Bearer {os.getenv("_TOKEN")}',
                'content-type': 'application/json'}
 
     url = f'https://api.github.com/repos/{os.getenv("GITHUB_REPOSITORY")}/actions/runs/{os.getenv("GITHUB_RUN_ID")}/jobs'
 
-    response = make_request(url=url, request_method="GET", headers=headers)
-    print(response)
+    r = make_request(url=url, request_method="GET", headers=headers)
+    print(r.text)
+    print(r.json())
 
 
 
