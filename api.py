@@ -23,7 +23,14 @@ def main():
     url = f'https://api.github.com/repos/{os.getenv("GITHUB_REPOSITORY")}/actions/runs/{os.getenv("GITHUB_RUN_ID")}/jobs'
 
     r = make_request(url=url, request_method="GET", headers=headers)
-    print(r.text)
+
+    jobs = r.json['jobs']
+    for job in jobs:
+        if job['name'] == os.getenv('GITHUB_JOB'):
+            check_run_url = job['check_run_url']
+
+    print(check_run_url)
+    print('==============================')
     print(r.json())
 
 
