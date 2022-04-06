@@ -22,6 +22,6 @@ jobs:
           --header 'content-type: application/json' \
           --data '{
             "name":"name",
-            "head_sha":${{ github.sha }}
+            "head_sha":"${{ github.sha }}"
             }' \
           --fail
