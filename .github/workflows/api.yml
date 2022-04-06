@@ -22,7 +22,7 @@ jobs:
           echo ${GITHUB_RUN_ID}
       - name: REST API
         env:
-          - GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: "{{ secrets.GITHUB_TOKEN }}"
         run: ./api.py
 
 
