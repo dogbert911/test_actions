@@ -16,8 +16,11 @@ jobs:
     steps:
       - name: Create issue using REST API
         run: |
-          curl --request GET \
-          --url https://api.github.com/repos/${{ github.repository }}/check-runs/1 \
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/check-runs \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
-          --fail
+          --data '{
+            "name":"name",
+            "head_sha":${{ github.sha }}
+            }'
