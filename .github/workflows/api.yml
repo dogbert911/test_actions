@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-
+      - run: pip install requests
       - run: |
           echo ${GITHUB_RUN_ID}
       - name: REST API
