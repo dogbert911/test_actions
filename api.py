@@ -28,6 +28,19 @@ def main():
     for job in jobs:
         if job['name'] == os.getenv('GITHUB_JOB'):
             check_run_url = job['check_run_url']
+            break
+
+    data = {
+        'name': 'GREAT NAME',
+        'output': {
+            'title': 'MEGA TITLE',
+            'summary': 'multiline\n summary\njob\naa',
+            'text': 'additional text'
+        }
+    }
+
+    make_request(url=check_run_url, request_method="PATCH", headers=headers, json=data)
+
 
     print(check_run_url)
     print('==============================')
