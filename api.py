@@ -43,6 +43,8 @@ def main():
 
     print(check_run_url)
     print('==============================')
+    print(r.status_code)
+    print('==============================')
     print(r.json())
 
 
