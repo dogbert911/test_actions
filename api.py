@@ -32,6 +32,7 @@ def main():
 
     data = {
         'name': 'GREAT NAME',
+        'conclusion': 'failure',
         'output': {
             'title': 'MEGA TITLE',
             'summary': 'multiline\n summary\njob\naa',
